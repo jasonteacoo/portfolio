@@ -1,0 +1,461 @@
+:root {
+    --teal: rgb(185, 228, 202);
+    --teal-deeper: rgb(57, 136, 107);
+    --dark: rgb(31, 32, 39);
+    --light: rgb(250, 243, 241);
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.1rem;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: .2s;
+}
+a:hover {
+    color: var(--teal);
+}
+ul > li {
+    list-style: none;
+}
+body {
+    background-color: var(--light);
+}
+
+
+
+/* Classes used for anti-redundancy purposes */
+/* Colorways */
+.dark-bg {
+    color: var(--light);
+    background-color: var(--dark);
+}
+
+/* Section used to divide main content topics */
+.section {
+    /* Used to show content under navbar when navbar jumping is used */
+    padding: 85px 5% 0;
+    margin: 0 auto;
+
+    border-radius: 25px;
+
+    max-width: 1000px;
+}
+
+/* Title for each section */
+.section-title {
+    text-transform: uppercase;
+    border-bottom: solid var(--teal) 5px;
+    padding-right: 40px;
+}
+
+/* Padding for section items except first */
+.section > *:not(:first-child) {
+    margin-top: 30px;
+}
+
+/* Box shadow effect */
+.hovered-shadow {
+    transition: .2s;
+}
+.hovered-shadow:hover {
+    transform: scale(1.01);
+    box-shadow: 0 5px 15px 5px rgb(0,0,0,.2);
+}
+
+/* Slide up on hover */
+.hover-slide-up {
+    transition: .2s;
+}
+.hover-slide-up:hover {
+    transform: translateY(-10px);
+}
+
+/* Slide down on hover */
+.hover-slide-down {
+    transition: .2s;
+}
+.hover-slide-down:hover {
+    transform: translateY(5px);
+}
+
+/* Regular shadow effect */
+.shadow {
+    box-shadow: 0 5px 15px 5px rgb(0,0,0,.2);
+}
+
+/* Adds teal border bottom */
+.teal-border-bottom {
+    border-bottom: solid var(--teal) 7px;
+}
+
+/* Adds dark border bottom */
+.dark-border-bottom {
+    border-bottom: solid var(--dark) 3px;
+}
+
+
+
+/* Whole navbar */
+nav {
+    width: 100%;
+    height: 75px;
+    position: fixed;
+
+    display: flex;
+    align-items: center;
+
+    z-index: 100;
+}
+
+/* List of navbar items */
+.nav-items {
+    width: 90%;
+    max-width: 1440px;
+
+    display: flex;
+    margin: 0 auto;
+}
+
+/* Each navbar item */
+.nav-item {
+    margin: 0 2%;
+}
+
+/* Each navbar item's link */
+.nav-item-link{
+    text-transform: uppercase;
+    padding: 25px 10%;
+}
+
+/* Moves home nav-item to left */
+.nav-home {
+    margin: 0 auto 0 5px;
+}
+
+/* Nav animations */
+.nav-home {
+    animation: fadeDown 1s;
+}
+.nav-about {
+    animation: fadeDown 1.5s;
+}
+.nav-works {
+    animation: fadeDown 2s;
+}
+.nav-contact {
+    animation: fadeDown 2.5s;
+}
+
+
+
+main {
+}
+
+
+
+/* Intro section */
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 100vh;
+    padding-top: 20vh;
+
+    max-width: 1440px;
+}
+
+/* Intro paragraph */
+.intro > p {
+    text-align: right;
+    font-size: 7vw;
+
+    animation: fadeDown 2s;
+}
+
+/* Name included within intro paragraph */
+.intro > p > span{
+    text-transform: uppercase;
+    font-size: 2em;
+
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Start button in intro paragraph */
+.intro > p > a {
+    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 25px;
+
+    background-color: var(--teal);
+}
+/* Change hover color of button */
+.intro > p > a:hover {
+    background-color: var(--dark);
+}
+
+/* Intro image */
+.intro > img {
+    max-width: 80%;
+
+    border-radius: 25px;
+    filter: brightness(190%) grayscale(1);
+
+    animation: fadeDown 2s;
+}
+
+
+
+/* About section */
+.about {
+    max-width: 900px;
+}
+
+
+
+/* Skills section */
+.skills {
+    margin-top: 75px;
+    padding: 85px 0;
+    background-color: var(--teal);
+}
+
+/* Sections within skills section */
+.skill-section {
+    padding: 1.5em;
+    width: 60%;
+}
+
+/* First and third skill section */
+.skill-section:nth-child(2n+1) {
+    text-align: right;
+    border-radius: 0 25px 25px 0;
+}
+
+/* Second skill section */
+.skill-section:nth-child(2) {
+    /* Move to the right side */
+    margin: 30px 0 30px auto;
+    border-radius: 25px 0 0 25px;
+}
+
+
+
+/* Works section */
+.works {
+
+}
+
+/* List of works */
+.works-list {
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 30px; */
+}
+
+/* Each individual project preview */
+.work {
+    width: 50%;
+    margin: 0 auto;
+    padding: 5% 10%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background-color: var(--teal);
+}
+
+/* Keep text color same on hover */
+.work:hover {
+    color: var(--teal-deeper);
+}
+
+/* Makes each work a responsive square */
+.work > img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+
+    border-radius: 25px;
+}
+
+/* Adds padding to work title */
+.work > h3 {
+    padding-bottom: 1em;
+}
+
+/* Work description */
+.work > p {
+    text-align: left;
+    color: rgb(81, 95, 93);
+}
+
+/* Create margin between each work */
+.work:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+
+
+/* Contact section */
+.contact {
+    margin-top: 85px;
+    padding: 85px 0;
+
+    border-radius: 0;
+    max-width: 100%;
+
+    border-top: 42px var(--teal) solid;
+}
+
+/* Decrease border bottom of section title */
+.contact > h3 > span {
+    padding-right: 0;
+}
+
+/* Center items */
+.contact > * {
+    text-align: center;
+}
+
+/* Email */
+.contact > p > a { 
+    color: darkgrey;
+}
+.contact > p > a:hover {
+    color: var(--teal);
+}
+
+/* Contact icons */
+.contact-icons > a > img {
+    width: 50px;
+}
+
+
+
+/* Animations */
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideUp {
+    from {}
+    to {
+        transform: translateY(-10%);
+    }
+}
+
+
+
+@media only screen and (max-width: 490px){
+    
+    /* Change padding on "Explore my portfolio." button */
+    .intro > p > a {
+         font-size: 55%;
+    }
+
+    /* Change font size of nav bar to fit in screen */
+    .nav-item-link {
+        font-size: 16px;
+    }
+
+}
+
+@media only screen and (min-width: 900px){
+
+    /* Turn flex direction of intro section to row */
+    .intro {
+        padding-top: 0;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    /* Change font sizes of intro and size of image*/
+    .intro > p {
+        text-align: center;
+        font-size: 48px;
+    }
+    .intro > p > span {
+        font-size: 2em;
+    }
+    .intro > img {
+        max-width: 500px;
+    }
+    
+    /* Padding for intro elements */
+    .intro > * {
+        padding: 0 10px;
+    }
+
+    /* Changes skill sections so that section title is flexed to side */
+    .skill-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    /* Targets second skill section and reverses flex direction */
+    .skill-section:nth-child(2) {
+        flex-direction: row-reverse;
+    }
+
+    /* Changes font size of skill section title */
+    .skill-section > h3 {
+        font-size: 2.5rem;
+    }
+    /* Adds spacing to skill section title */
+    .skill-section:before {
+        content: "";
+        width: 15vw;
+    }
+
+}
+
+@media only screen and (min-width: 1152px) {
+
+    .intro > p {
+        text-align: right;
+    }
+}
